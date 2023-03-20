@@ -1,6 +1,12 @@
+root {
+  --white: #fff;
+  --grey: #a7a7a7;
+}
+
 body {
   font-family: "Circular";
 }
+
 nav {
   width: 380px;
   height: 100vh;
@@ -98,4 +104,67 @@ main header .icon-wrapper button svg {
 .main .card p {
   color: #b3b3b3;
   font-size: 0.9rem;
+}
+
+
+/* FOOTER STYLES */
+footer {
+  border-bottom: 1px solid coral;
+  padding-bottom: 100px;
+}
+
+footer #footer-first-row {
+  border-bottom: 0.1px solid #b3b3b3;
+}
+
+footer p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a7a7a7;
+  margin-bottom: 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+footer a:first-child {
+  margin-right: 16px;
+}
+
+footer a:nth-child(2) {
+  margin-right: 16px;
+}
+
+footer .icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  color: #a7a7a7;
+  position: relative;
+}
+
+footer .icon:hover {
+  background-color: #727272;
+}
+
+footer .icon svg {
+  fill: #fff;
+}
+
+footer #copyright {
+  color: #a7a7a7;
 }
