@@ -4,7 +4,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: red;
+  border: 1px solid white;
   z-index: 100;
 }
 
@@ -13,4 +13,17 @@ main {
   /* margin-left: 600px; */
   width: calc(100% - 380px);
   margin-left: auto;
+  /* #12313e #121212 */
+  background: rgb(18,49,62);
+  background: linear-gradient(180deg, rgba(18,49,62,0.5) 0%, rgba(18,18,18,1) 10%);
+}
+main .wrapper {
+  width: 95%;
+  margin-inline: auto;
+}
+main .card {
+  background-color: unset;
+}
+main .card p {
+  color: #b3b3b3;
 }
