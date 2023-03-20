@@ -12,19 +12,90 @@ nav {
 }
 
 main {
-  height: 400vh;
-  width: calc(100% - 380px);
-  margin-left: auto;
   background: rgb(18,49,62);
   background: linear-gradient(180deg, rgba(18,49,62,0.5) 0%, rgba(18,18,18,1) 10%);
+  margin-left: auto;
+  width: calc(100% - 380px);
 }
 main .wrapper {
   width: 95%;
   margin-inline: auto;
 }
-main .card {
-  background-color: unset;
+main header .icon-wrapper button {
+  border: unset;
+  background: unset;
+  height: 32px;
+  width: 32px;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 100%;
+  opacity: 0.7;
+  padding: 0.5rem;
+  vertical-align: middle;
 }
-main .card p {
+main header .icon-wrapper button svg {
+  fill: #fff;
+  display: block;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.main h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.goodCards {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(18,49,62,1);
+}
+.main .goodCard {
+  display: flex;
+  border-radius: 30px;
+}
+.goodCard-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0 1rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.main .goodCard img {
+  min-width: 64px;
+  max-width: 80px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.main .goodCard-play {
+  background-color: #1ED760;
+  padding: 0.8rem;
+  border-radius: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.main .goodCard-play svg {
+  display: block;
+}
+.main .goodCard:hover .goodCard-play {
+  opacity: 1;
+}
+.main .card {
+  background-color: #181818;
+  border: unset;
+  transition: all 0.5s ease-in-out;
+}
+.main .card:hover {
+  background-color: #282828;
+}
+.main h3 {
+  font-size: 1rem;
+}
+.main .card p {
   color: #b3b3b3;
+  font-size: 0.9rem;
 }
