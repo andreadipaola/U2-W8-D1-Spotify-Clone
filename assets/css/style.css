@@ -2,12 +2,11 @@ body {
   font-family: "Circular";
 }
 nav {
-  width: 380px;
+  width: 320px;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  border: 1px solid white;
   z-index: 100;
 }
 
@@ -27,4 +26,44 @@ main .card {
 }
 main .card p {
   color: #b3b3b3;
+}
+
+.spotify-logo {
+  width: 45%;
+  margin-block: 2rem;
+  padding-left: 2rem;
+}
+
+ul,
+ul:hover {
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.nav-first {
+  line-height: 2rem;
+}
+
+svg {
+  fill: white;
+  margin-right: 1rem;
+}
+
+hr {
+  position: relative;
+  left: 2rem;
+}
+
+.playlist {
+  background-color: white;
+  fill: black;
+}
+
+.cuore {
+  fill:  white;
+  background-color: violet;
 }
