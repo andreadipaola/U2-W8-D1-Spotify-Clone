@@ -1,3 +1,6 @@
+body {
+  font-family: "Circular";
+}
 nav {
   width: 380px;
   height: 100vh;
@@ -10,10 +13,8 @@ nav {
 
 main {
   height: 400vh;
-  /* margin-left: 600px; */
   width: calc(100% - 380px);
   margin-left: auto;
-  /* #12313e #121212 */
   background: rgb(18,49,62);
   background: linear-gradient(180deg, rgba(18,49,62,0.5) 0%, rgba(18,18,18,1) 10%);
 }
