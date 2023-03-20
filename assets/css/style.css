@@ -17,6 +17,48 @@ nav {
   z-index: 100;
 }
 
+/*SIDEBAR*/
+.spotify-logo {
+  width: 45%;
+  margin-block: 2rem;
+  padding-left: 2rem;
+}
+
+ul,
+ul:hover {
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.nav-first {
+  line-height: 2rem;
+}
+
+svg {
+  fill: white;
+  margin-right: 1rem;
+}
+
+hr {
+  position: relative;
+  left: 2rem;
+}
+
+.playlist {
+  background-color: white;
+  fill: black;
+}
+
+.cuore {
+  fill:  white;
+  background-color: violet;
+}
+
+/*MAIN*/
 main {
   background: rgb(18,49,62);
   background: linear-gradient(180deg, rgba(18,49,62,0.5) 0%, rgba(18,18,18,1) 10%);
