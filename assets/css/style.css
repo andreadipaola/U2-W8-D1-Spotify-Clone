@@ -1,0 +1,16 @@
+nav {
+  width: 380px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: red;
+  z-index: 100;
+}
+
+main {
+  height: 400vh;
+  /* margin-left: 600px; */
+  width: calc(100% - 380px);
+  margin-left: auto;
+}
