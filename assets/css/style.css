@@ -1,6 +1,12 @@
+root {
+  --white: #fff;
+  --grey: #a7a7a7;
+}
+
 body {
   font-family: "Circular";
 }
+
 nav {
   width: 380px;
   height: 100vh;
@@ -11,9 +17,51 @@ nav {
   z-index: 100;
 }
 
+/*SIDEBAR*/
+.spotify-logo {
+  width: 45%;
+  margin-block: 2rem;
+  padding-left: 2rem;
+}
+
+ul,
+ul:hover {
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.nav-first {
+  line-height: 2rem;
+}
+
+svg {
+  fill: white;
+  margin-right: 1rem;
+}
+
+hr {
+  position: relative;
+  left: 2rem;
+}
+
+.playlist {
+  background-color: white;
+  fill: black;
+}
+
+.cuore {
+  fill: white;
+  background-color: violet;
+}
+
+/*MAIN*/
 main {
-  background: rgb(18,49,62);
-  background: linear-gradient(180deg, rgba(18,49,62,0.5) 0%, rgba(18,18,18,1) 10%);
+  background: rgb(18, 49, 62);
+  background: linear-gradient(180deg, rgba(18, 49, 62, 0.5) 0%, rgba(18, 18, 18, 1) 10%);
   margin-left: auto;
   width: calc(100% - 380px);
 }
@@ -26,7 +74,7 @@ main header .icon-wrapper button {
   background: unset;
   height: 32px;
   width: 32px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 100%;
   opacity: 0.7;
   padding: 0.5rem;
@@ -47,7 +95,7 @@ main header .icon-wrapper button svg {
 }
 .goodCards {
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(18,49,62,1);
+  border-bottom: 1px solid rgba(18, 49, 62, 1);
 }
 .main .goodCard {
   display: flex;
@@ -72,7 +120,7 @@ main header .icon-wrapper button svg {
   border-bottom-left-radius: 5px;
 }
 .main .goodCard-play {
-  background-color: #1ED760;
+  background-color: #1ed760;
   padding: 0.8rem;
   border-radius: 100%;
   opacity: 0;
@@ -98,4 +146,73 @@ main header .icon-wrapper button svg {
 .main .card p {
   color: #b3b3b3;
   font-size: 0.9rem;
+}
+
+/* FOOTER STYLES */
+footer {
+  /* border-bottom: 1px solid coral; */
+  padding-bottom: 100px;
+}
+
+footer #footer-first-row {
+  border-bottom: 0.1px solid #b3b3b3;
+}
+
+footer #footer-first-row div:first-child,
+footer #footer-first-row div:nth-child(2) {
+  margin-right: 100px;
+}
+
+footer p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a7a7a7;
+  margin-bottom: 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+footer a:first-child {
+  margin-right: 16px;
+}
+
+footer a:nth-child(2) {
+  margin-right: 16px;
+}
+
+footer .icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  color: #a7a7a7;
+  position: relative;
+}
+
+footer .icon:hover {
+  background-color: #727272;
+}
+
+footer .icon svg {
+  fill: #fff;
+  /* questa regola è per prevenire l'effetto di una regola di Pierluigi */
+  margin-right: 0;
+}
+
+footer #copyright {
+  color: #a7a7a7;
 }
