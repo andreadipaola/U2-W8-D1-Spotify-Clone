@@ -234,3 +234,19 @@ a {
 a:hover {
   color: #fff;
 }
+
+/*OFFCANVAS*/
+.offcanvas {
+  max-width: 200px;
+}
+.oc-name {
+  font-size: 12px;
+}
+.oc-desc {
+  font-size: 10px
+}
+
+.bi-person-circle {
+  font-size: large;
+}
+
