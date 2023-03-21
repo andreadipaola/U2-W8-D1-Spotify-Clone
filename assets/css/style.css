@@ -73,14 +73,24 @@ nav .nav-second div.booksmark {
 /*MAIN*/
 main {
   background: rgb(18, 49, 62);
-  background: linear-gradient(180deg, rgba(18, 49, 62, 0.5) 0%, rgba(18, 18, 18, 1) 10%);
+  background: linear-gradient(180deg, rgba(18, 49, 62, 1) 0%, rgba(18, 18, 18, 1) 10%);
   margin-left: auto;
   width: calc(100% - 250px);
 }
 main .wrapper {
   width: 95%;
   margin-inline: auto;
+  position: relative;
 }
+
+main header {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 250px);
+  z-index: 10;
+  transition: all 0.5s linear;
+}
+
 main header .icon-wrapper button {
   border: unset;
   background: unset;
@@ -92,27 +102,82 @@ main header .icon-wrapper button {
   padding: 0.5rem;
   vertical-align: middle;
 }
+
 main header .icon-wrapper button svg {
   fill: #fff;
   display: block;
 }
+
+main header .upgradeBtn {
+  border-color: #727272;
+}
+
+main header .userBtn {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  border: unset;
+  padding: 2px;
+}
+
+main header .userBtn div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  width: 38px;
+  border-radius: 100%;
+  fill: #fff;
+}
+
+main header .userBtn div:first-of-type {
+  background-color: #535353;
+  margin-right: 0.5rem;
+}
+
+main header button {
+  transition: all 0.5s linear;
+}
+
+main header .upgradeBtn:hover{
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+main header .userBtn:hover {
+  background-color: #282828;
+  color: #fff;
+}
+
+/* Change on Scroll */
+.scroll-down header {
+  background: rgb(18, 49, 62);
+}
+
 .main {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+  margin-top: 80px;
 }
+
 .main h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .goodCards {
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(18, 49, 62, 1);
 }
+
 .main .goodCard {
   display: flex;
   border-radius: 30px;
 }
+
 .goodCard-body {
   display: flex;
   justify-content: space-between;
@@ -123,6 +188,7 @@ main header .icon-wrapper button svg {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
 .main .goodCard img {
   min-width: 64px;
   max-width: 80px;
@@ -131,6 +197,7 @@ main header .icon-wrapper button svg {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
 .main .goodCard-play {
   background-color: #1ed760;
   padding: 0.8rem;
@@ -138,23 +205,29 @@ main header .icon-wrapper button svg {
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
+
 .main .goodCard-play svg {
   display: block;
 }
+
 .main .goodCard:hover .goodCard-play {
   opacity: 1;
 }
+
 .main .card {
   background-color: #181818;
   border: unset;
   transition: all 0.5s ease-in-out;
 }
+
 .main .card:hover {
   background-color: #282828;
 }
+
 .main h3 {
   font-size: 1rem;
 }
+
 .main .card p {
   color: #b3b3b3;
   font-size: 0.9rem;
