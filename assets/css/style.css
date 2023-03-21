@@ -22,12 +22,14 @@ nav a {
   text-decoration: none;
   color: #b3b3b3;
 }
+
 nav .spotify-logo--text {
   width: 45%;
   margin-block: 2rem;
   padding-left: 2rem;
   fill: #fff;
 }
+
 nav ul,
 nav ul:hover {
   list-style: none;
@@ -48,6 +50,7 @@ nav hr {
   width: 80%;
   margin-inline: auto;
 }
+
 nav .nav-second div {
   width: 24px;
   height: 24px;
@@ -56,14 +59,17 @@ nav .nav-second div {
   justify-content: center;
   border-radius: 4px;
 }
+
 nav .nav-second div.playlist {
   background-color: #b3b3b3;
   fill: black;
 }
+
 nav .nav-second div.cuore {
   fill: white;
-  background: linear-gradient(135deg,#450af5,#c4efd9);
+  background: linear-gradient(135deg, #450af5, #c4efd9);
 }
+
 nav .nav-second div.booksmark {
   fill: #1ed760;
   background-color: #006450;
@@ -77,6 +83,7 @@ main {
   margin-left: auto;
   width: calc(100% - 250px);
 }
+
 main .wrapper {
   width: 95%;
   margin-inline: auto;
@@ -91,6 +98,7 @@ main header {
   transition: all 0.5s linear;
 }
 
+
 main header .icon-wrapper button {
   border: unset;
   background: unset;
@@ -102,6 +110,7 @@ main header .icon-wrapper button {
   padding: 0.5rem;
   vertical-align: middle;
 }
+
 
 main header .icon-wrapper button svg {
   fill: #fff;
@@ -115,7 +124,7 @@ main header .upgradeBtn {
 main header .userBtn {
   display: inline-flex;
   align-items: center;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   border: unset;
   padding: 2px;
 }
@@ -139,7 +148,7 @@ main header button {
   transition: all 0.5s linear;
 }
 
-main header .upgradeBtn:hover{
+main header .upgradeBtn:hover {
   border-color: #fff;
   background-color: transparent;
   color: #fff;
@@ -235,8 +244,7 @@ main header .userBtn:hover {
 
 /* FOOTER STYLES */
 footer {
-  /* border-bottom: 1px solid coral; */
-  padding-bottom: 100px;
+  margin-bottom: 180px;
 }
 
 footer #footer-first-row {
@@ -300,10 +308,128 @@ footer #copyright {
   color: #a7a7a7;
 }
 
+/* PLAYER STYLES */
+#player {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-inline: 16px;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  display: flex;
+  align-items: center;
+  height: 90px;
+  width: 100%;
+  min-width: 620px;
+  z-index: 999;
+}
+
+#player #left-player,
+#player #right-player {
+  max-width: 180px;
+  width: 30%;
+}
+
+#player #left-player img {
+  max-width: 56px;
+  max-height: 56px;
+
+}
+
+#player #player-author,
+#player-song {
+  text-decoration: none;
+}
+
+#player #player-song {
+  color: #fff;
+  font-size: 14px;
+}
+
+#player #player-author {
+  color: #b3b3b3;
+  font-size: 11px;
+}
+
+#player #player-author:hover,
+aside #player #player-author:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+#player button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  height: 32px;
+  min-width: 32px;
+  width: 32px;
+
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#player svg {
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+
+#player #previous-btn {
+  margin-left: 8px;
+}
+
+#player #next-btn {
+  margin-right: 8px;
+}
+
+#player #play-btn {
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 32px;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  min-width: 32px;
+  width: 32px;
+  margin-inline: 16px;
+}
+
+#player #play-btn svg {
+  fill: #000;
+}
+
+#player #playback-bar div:first-child,
+#player #playback-bar div:last-child {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: #a7a7a7;
+}
+
+#player #playback-bar div:nth(2)-child {
+  height: 12px;
+}
+
+
+#player #playback-bar div:nth(2)-child label input {
+  color: #b3b3b3;
+  text-transform: none;
+}
+
+#volume-slider {
+  width: 100%;
+  height: 12px;
+  position: relative;
+}
+
 /* Helper */
 a {
   transition: all 0.2s linear;
 }
+
 a:hover {
   color: #fff;
 }
@@ -312,9 +438,11 @@ a:hover {
 .offcanvas {
   max-width: 200px;
 }
+
 .oc-name {
   font-size: 12px;
 }
+
 .oc-desc {
   font-size: 10px
 }
@@ -322,4 +450,3 @@ a:hover {
 .bi-person-circle {
   font-size: large;
 }
-
