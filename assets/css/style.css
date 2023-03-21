@@ -249,7 +249,7 @@ footer #copyright {
 }
 
 /* PLAYER STYLES */
-aside #player {
+#player {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -264,40 +264,40 @@ aside #player {
   z-index: 999;
 }
 
-aside #player #left-player,
-aside #player #right-player {
-  max-width: 200px;
+#player #left-player,
+#player #right-player {
+  max-width: 180px;
   width: 30%;
 }
 
-aside #player img {
+#player #left-player img {
   max-width: 56px;
   max-height: 56px;
 
 }
 
-aside #player #player-author,
+#player #player-author,
 #player-song {
   text-decoration: none;
 }
 
-aside #player #player-song {
+#player #player-song {
   color: #fff;
   font-size: 14px;
 }
 
-aside #player #player-author {
+#player #player-author {
   color: #b3b3b3;
   font-size: 11px;
 }
 
-aside #player #player-author:hover,
+#player #player-author:hover,
 aside #player #player-author:hover {
   text-decoration: underline;
   color: #fff;
 }
 
-aside #player button {
+#player button {
   background-color: transparent;
   padding: 0;
   border: none;
@@ -312,20 +312,20 @@ aside #player button {
   justify-content: center;
 }
 
-aside #player svg {
+#player svg {
   fill: rgba(255, 255, 255, 0.7);
 }
 
 
-aside #player #previous-btn {
+#player #previous-btn {
   margin-left: 8px;
 }
 
-aside #player #next-btn {
+#player #next-btn {
   margin-right: 8px;
 }
 
-aside #player #play-btn {
+#player #play-btn {
   align-items: center;
   background-color: #fff;
   border: none;
@@ -338,55 +338,27 @@ aside #player #play-btn {
   margin-inline: 16px;
 }
 
-aside #player #play-btn svg {
+#player #play-btn svg {
   fill: #000;
 }
 
-aside #player #playback-bar div:first-child,
-aside #player #playback-bar div:last-child {
-  /* min-width: 40px; */
-  /* text-align: right; */
-  /* margin-block: 0px; */
+#player #playback-bar div:first-child,
+#player #playback-bar div:last-child {
   font-size: 0.6875rem;
   font-weight: 400;
   color: #a7a7a7;
 }
 
-aside #player #playback-bar div:nth(2)-child {
+#player #playback-bar div:nth(2)-child {
   height: 12px;
-  /* position: relative; */
-  /* width: 100%; */
 }
 
-aside #player #playback-bar div:nth(2)-child label {
-  /* clip: rect(0 0 0 0);
-  border: 0;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; */
-}
 
-aside #player #playback-bar div:nth(2)-child label input {
+#player #playback-bar div:nth(2)-child label input {
   color: #b3b3b3;
   text-transform: none;
 }
 
-/* #progress-bar {
-  --progress-bar-transform: 0%;
-  --bg-color: hsla(0, 0%, 100%, .3);
-  --fg-color: #fff;
-  --is-active-fg-color: #1db954;
-  --progress-bar-transform: 0%;
-  --progress-bar-height: 4px;
-  --progress-bar-radius: calc(4px/2);
-  height: 100%;
-  overflow: hidden;
-  touch-action: none;
-  width: 100%;
-} */
 #volume-slider {
   width: 100%;
   height: 12px;
