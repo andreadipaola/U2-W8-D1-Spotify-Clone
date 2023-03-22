@@ -7,6 +7,12 @@ body {
   font-family: "Circular";
 }
 
+a,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
 nav {
   width: 250px;
   height: 100vh;
@@ -227,14 +233,22 @@ main header .userBtn:hover {
   background-color: #181818;
   border: unset;
   transition: all 0.5s ease-in-out;
+  height: 100%;
 }
-
+.main .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .main .card:hover {
   background-color: #282828;
 }
-
 .main h3 {
   font-size: 1rem;
+}
+
+.main .card-body a {
+  margin-top: auto;
 }
 
 .main .card p {
