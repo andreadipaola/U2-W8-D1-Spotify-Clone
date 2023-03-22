@@ -390,6 +390,10 @@ footer #copyright {
     justify-content: center;
 }
 
+#central-player {
+    max-width: 722px;
+    width: 40%;
+}
 
 #central-player #previous-btn {
     margin-left: 8px;
@@ -418,7 +422,7 @@ footer #copyright {
 
 /* PLAYBACK BAR STYLES */
 #central-player #playback-bar {
-    user-select: none;
+    /* user-select: none; */
     border: 0;
     margin: 0;
     padding: 0;
@@ -579,6 +583,29 @@ footer #copyright {
 }
 
 /* LEFT PLAYER STYLES */
+#right-player {
+    vertical-align: baseline;
+}
+
+#right-player div {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+#volume-bar {
+    -webkit-box-align: center;
+    -webkit-box-flex: 0;
+    align-items: center;
+    display: flex;
+    flex: 0 1 125px;
+    position: relative;
+    --button-size: 32px;
+    --slider-width: 100%;
+
+}
+
 #volume-slider {
     width: 100%;
     height: 12px;
