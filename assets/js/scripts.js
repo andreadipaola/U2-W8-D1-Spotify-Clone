@@ -1,5 +1,7 @@
-/* ADD CLASS ON SCROLL
--------------------------------------------------------------------------------------------------- */
+/**
+ * Add class on scroll
+ * ----------------------------------------------------------------------------
+ */
 window.addEventListener('scroll', function (e) {
   let heightHeader = document.querySelector('header').offsetHeight;
 
@@ -23,6 +25,7 @@ const api = 'https://striveschool-api.herokuapp.com/api/deezer/';
 
 /**
  * HOMEPAGE
+ * ----------------------------------------------------------------------------
  */
 
 // NodeList contenente gli elementi h2 relativi agli autori della homepage
@@ -52,14 +55,14 @@ const createAlbum = async (elementi, singer) => {
       const column = document.createElement('div');
       column.className = 'col';
       
-      // console.log(card);
+      console.log(card);
 
       column.innerHTML = `
         <div class="card p-3">
-          <a href="album.html?id=${card.album.id}"><img src="${card.album.cover_medium}" class="card-img-top img-fluid mb-3" alt=""></a>
+          <a href="album.html?id=${card.idAlbum}"><img src="${card.urlAlbum}" class="card-img-top img-fluid mb-3" alt=""></a>
           <div class="card-body p-0">
-            <a href="album.html?id=${card.album.id}"><h3 class="card-title">${card.album.title}</h3></a>
-            <a href="artist.html?id=${card.artist.id}"><p class="card-text m-0">${card.artist.name}</p></a>
+            <a href="album.html?id=${card.idAlbum}"><h3 class="card-title">${card.titleAlbum}</h3></a>
+            <a href="artist.html?id=${card.idArtist}"><p class="card-text m-0">${card.nameArtist}</p></a>
           </div>
         </div>
       `;
@@ -74,27 +77,50 @@ const createAlbum = async (elementi, singer) => {
  * Fn che rimuove i valori duplicati da un array di oggetti
  * ----------------------------------------------------------------------------
  */
+const deleteAlbumReplies = (objBody) => {
 
-// converto gli oggetti dell'array in stringhe json
-const serializeArr = arr => {
-  return arr.map(obj => { return JSON.stringify(obj); });
-};
+  // dichiaro un array di oggetti già contenente un oggetto utile per il primo confronto
+  const arrObj = [{idAlbum: 0, urlAlbum: 0, titleAlbum: 0, idArtist: 0, nameArtist: 0}];
 
-// 
-const arrayUnique = arr => {
-  
-  // ricevo array di oggetti in stringhe
-  let objects = serializeArr(arr);
-  console.log(objects)
+  for (const iterator of objBody) {
 
-  // array di stringhe privo dei duplicati
-  let unique = [...new Set(objects)];
-  console.log(unique)
+    // 
+    const {
+      album: {
+        id: idAlbum,
+        cover_medium: urlAlbum,
+        title: titleAlbum,
+      },
+      artist: {
+        id: idArtist,
+        name: nameArtist,
+      }
+    } = iterator;
 
-  // ritorno l'array di stringhe in array di oggetti
-  return unique.map(str => { return JSON.parse(str); } );
-};
+    let tempObj = {
+      idAlbum: idAlbum,
+      urlAlbum: urlAlbum,
+      titleAlbum: titleAlbum,
+      idArtist: idArtist,
+      nameArtist: nameArtist
+    };
 
+    let idCheck = false;
+    
+    // compara gli idAlbum e se trova una corrispondenza esce dal ciclo for
+    for (const arr of arrObj) {
+      if((arr.idAlbum === tempObj.idAlbum)){
+        idCheck = true;
+        break;
+      }
+    }
+
+    // se non ha trovato corrispondenze nel ciclo for sopra pusha tempObj all'interno di arrObj
+    if(!idCheck) {arrObj.push(tempObj)};
+  }
+
+  return arrObj;
+}
 
 
 /**
@@ -113,29 +139,14 @@ const fetchData = async (name) => {
 
     const body = await resp.json();
     const objBody = await body.data;
-    // console.log(body);
-    // console.log(objBody);
-    
-    let uniqueArr = objBody.slice(0, 6);
+    const albumUnique = deleteAlbumReplies(objBody);
+    const arrayReduce = albumUnique.slice(1, 7);
 
-    createAlbum(uniqueArr, name);
+    createAlbum(arrayReduce, name);
 
-    // let objBodyUnique = arrayUnique(objBody);
-    // console.log(objBodyUnique);
-
-    // for (const iterator of objBody) {
-    //   arrObj.push(iterator.album);
-    // }
-    // console.log(arrObj)
-    // let uniqueArr = test(arrObj);
-    // console.log(arrayUnique(arrObj));
-    // let uniqueArr = objBody.slice(0, 6);
-    // console.log(uniqueArr)
-    
   } catch (error) {
     console.log(error);
   }
-
 }
 
 
@@ -149,4 +160,3 @@ window.onload = () => {
     fetchData(singer);
   }
 }
-
