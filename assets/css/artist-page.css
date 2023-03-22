@@ -320,7 +320,7 @@ footer #copyright {
     align-items: center;
     height: 90px;
     width: 100%;
-    min-width: 620px;
+    min-width: 700px;
     z-index: 999;
 }
 
@@ -653,7 +653,25 @@ a:hover {
 /* ARTIST PAGE */
 #hero-section {
     height: 356px;
-    background-image: url("https://e-cdns-images.dzcdn.net/images/cover/de48d988a82fc401f4b9bafc2639f7d0/1000x1000-000000-80-0-0.jpg");
+    /* background-image: url("https://e-cdns-images.dzcdn.net/images/cover/de48d988a82fc401f4b9bafc2639f7d0/1000x1000-000000-80-0-0.jpg"); */
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#hero-section img {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* z-index: -1; */
+}
+
+#hero-section-text {
+    z-index: 2;
 }
 
 #hero-section h1 {
@@ -680,7 +698,7 @@ a:hover {
     }
 }
 
-#popular-section .play-button {
+#controls-section .play-button {
     background-color: #1ed760;
     padding: 0;
     border: none;
@@ -691,11 +709,11 @@ a:hover {
     margin-right: 32px;
 }
 
-#popular-section button svg {
+#controls-section button svg {
     fill: #000;
 }
 
-#popular-section .follow-button {
+#controls-section .follow-button {
     background-color: transparent;
     font-size: 14px;
     color: #fff;
@@ -705,12 +723,12 @@ a:hover {
     margin-right: 32px;
 }
 
-#popular-section .three-dots-button {
+#controls-section .three-dots-button {
     border: none;
     background-color: transparent;
 }
 
-#popular-section .three-dots-button svg {
+#controls-section .three-dots-button svg {
     fill: #b3b3b3;
 }
 
@@ -720,7 +738,7 @@ a:hover {
 }
 
 #popular-section .number,
-#popular-section .listners,
+#popular-section .popular-song-listners,
 #popular-section .duration,
 #popular-section .see-more {
     color: #b3b3b3;
@@ -745,16 +763,26 @@ a:hover {
     border-radius: 50%;
 }
 
-#liked-songs .liked-songs-svg-container svg {
-
+#liked-songs .liked-songs-svg-container {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #1ed760;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 0;
+    right: 20px;
 }
 
-#liked-songs .liked-songs-img-container svg {
+#liked-songs .liked-songs-svg-container svg {
+    display: inline-block;
     fill: #fff;
-    height: 14px;
-    width: 14px;
+    height: 11px;
+    width: 11px;
 }
 
 
@@ -767,4 +795,8 @@ a:hover {
 #discography-section a {
     font-size: 14px;
     color: #b3b3b3;
+}
+
+#main-section {
+    margin-top: 30px;
 }
