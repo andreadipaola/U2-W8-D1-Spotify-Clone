@@ -1,8 +1,8 @@
 const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
-// const id = new URLSearchParams(window.location.search).get("id");
+const id = new URLSearchParams(window.location.search).get("id");
 // const id = 412;
 // const id = 566;
-const id = 6168800;
+// const id = 6168800;
 
 
 
@@ -38,6 +38,7 @@ const fetchTrackList = async (param) => {
   artistTrackList.forEach((track, index) => {
 
     const { title, rank, duration, album } = track;
+    console.log(album)
 
     const min = Math.floor(duration / 60);
     const sec = duration - min * 60;
@@ -46,12 +47,14 @@ const fetchTrackList = async (param) => {
     const popularSong = document.createElement("div");
     popularSong.innerHTML =
       `<div class="d-flex align-items-center justify-content-between mb-3">
-          <div class="me-3">
+          <div class="flex-grow-1 me-3">
             <span class="me-3 number">${index + 1}</span>
-            <img class="me-3" src=${album.cover_small} alt="">
+            <a href="album.html?id=${album.id}">
+              <img class="me-3" src="${album.cover_small}" alt="">
+            </a>
             <span>${title}</span>
           </div>
-          <div class="me-3">
+          <div class="me-5">
             <span class="popular-song-listners">${rank}</span>
           </div>
 
