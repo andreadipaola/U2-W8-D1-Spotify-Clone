@@ -652,7 +652,7 @@ a:hover {
 
 /* ARTIST PAGE */
 #hero-section {
-    height: 356px;
+    height: 40vh;
     /* background-image: url("https://e-cdns-images.dzcdn.net/images/cover/de48d988a82fc401f4b9bafc2639f7d0/1000x1000-000000-80-0-0.jpg"); */
     display: inline-block;
     overflow: hidden;
@@ -678,6 +678,12 @@ a:hover {
     font-size: 6rem;
     font-weight: 900;
 }
+
+/* #hero-section #verified-icon-container {
+    display: flex;
+    background-color: #fff;
+    justify-self: center;
+} */
 
 #hero-section svg {
     fill: #3d91f4;
