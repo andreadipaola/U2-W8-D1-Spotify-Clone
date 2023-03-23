@@ -345,41 +345,14 @@ footer #copyright {
   align-items: center;
   height: 90px;
   width: 100%;
-  min-width: 620px;
+  min-width: 700px;
   z-index: 999;
 }
 
 #player #left-player,
 #player #right-player {
-  max-width: 180px;
+  max-width: 230px;
   width: 30%;
-}
-
-#player #left-player img {
-  max-width: 56px;
-  max-height: 56px;
-
-}
-
-#player #player-author,
-#player-song {
-  text-decoration: none;
-}
-
-#player #player-song {
-  color: #fff;
-  font-size: 14px;
-}
-
-#player #player-author {
-  color: #b3b3b3;
-  font-size: 11px;
-}
-
-#player #player-author:hover,
-aside #player #player-author:hover {
-  text-decoration: underline;
-  color: #fff;
 }
 
 #player button {
@@ -401,16 +374,61 @@ aside #player #player-author:hover {
   fill: rgba(255, 255, 255, 0.7);
 }
 
+/* LEFT PLAYER STAYLES */
+#player #left-player img {
+  max-width: 56px;
+  max-height: 56px;
 
-#player #previous-btn {
+}
+
+#player #player-author,
+#player-song {
+  text-decoration: none;
+}
+
+#player #player-song {
+  color: #fff;
+  font-size: 14px;
+}
+
+#player #player-author {
+  color: #b3b3b3;
+  font-size: 11px;
+}
+
+#player #player-author:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* CENTRAL PLAYER STYLES */
+#player button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  height: 32px;
+  min-width: 32px;
+  width: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#central-player {
+  max-width: 722px;
+  width: 40%;
+}
+
+#central-player #previous-btn {
   margin-left: 8px;
 }
 
-#player #next-btn {
+#central-player #next-btn {
   margin-right: 8px;
 }
 
-#player #play-btn {
+#central-player #play-btn {
   align-items: center;
   background-color: #fff;
   border: none;
@@ -423,25 +441,202 @@ aside #player #player-author:hover {
   margin-inline: 16px;
 }
 
-#player #play-btn svg {
+#central-player #play-btn svg {
   fill: #000;
 }
 
-#player #playback-bar div:first-child,
-#player #playback-bar div:last-child {
+/* PLAYBACK BAR STYLES */
+#central-player #playback-bar {
+  /* user-select: none; */
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#central-player #playback-bar:focus {
+  outline: none;
+}
+
+#central-player #starting-time {
+  min-width: 40px;
+  text-align: right;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
   font-size: 0.6875rem;
   font-weight: 400;
+  font-family: "Circular";
   color: #a7a7a7;
 }
 
-#player #playback-bar div:nth(2)-child {
-  height: 12px;
+#central-player #starting-time:focus {
+  outline: none;
 }
 
+#progress-bar,
+#volume-slider {
+  height: 12px;
+  position: relative;
+  width: 100%;
+}
 
-#player #playback-bar div:nth(2)-child label input {
+#progress-bar:focus,
+#volume-slider:focus {
+  outline: none;
+}
+
+#progress-bar:focus-within,
+#volume-slider:focus-within {
+  outline: 5px auto #3673d4;
+}
+
+#progress-bar:focus-visible,
+#volume-slider:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+#progress-bar label,
+#volume-slider label {
+  clip: rect(0 0 0 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#progress-bar label:focus,
+#volume-slider label:focus {
+  outline: none;
+}
+
+#progress-bar label:focus-visible,
+#volume-slider label:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+#progress-bar input,
+#volume-slider input {
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  -webkit-rtl-ordering: logical;
+  background-color: field;
+  appearance: auto;
+  cursor: default;
+  padding: initial;
+  border: initial;
+  margin: 2px;
   color: #b3b3b3;
   text-transform: none;
+  font-family: "Circular";
+}
+
+#progress-time {
+  /* Questo valore dovrà essere dinamico */
+  --progress-bar-transform: 42.3077%;
+  --bg-color: hsla(0, 0%, 100%, .3);
+  --fg-color: #fff;
+  --is-active-fg-color: #1db954;
+  --progress-bar-transform: 0%;
+  --progress-bar-height: 4px;
+  /* Qui ho sostituito una variabile col primo termine di calc */
+  --progress-bar-radius: calc(4px/2);
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+  width: 100%;
+}
+
+#progress-time div {
+  background-color: var(--bg-color);
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: var(--progress-bar-radius);
+  height: var(--progress-bar-height);
+  width: 100%;
+}
+
+#progress-time div div {
+  border-radius: var(--progress-bar-radius);
+  height: var(--progress-bar-height);
+  width: 100%;
+  overflow: hidden;
+}
+
+#progress-time div div div {
+  background-color: var(--fg-color);
+  border-radius: var(--progress-bar-radius);
+  height: var(--progress-bar-height);
+  transform: translateX(calc(-100% + var(--progress-bar-transform)));
+  width: 100%;
+}
+
+#progress-time div div div:focus {
+  background-color: var(--is-active-fg-color);
+  outline: none;
+}
+
+#ending-time {
+  min-width: 40px;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin-block: 0px;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  font-family: "Circular";
+  color: #a7a7a7;
+}
+
+/* LEFT PLAYER STYLES */
+#right-player {
+  vertical-align: baseline;
+}
+
+#right-player div {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+#volume-bar {
+  -webkit-box-align: center;
+  -webkit-box-flex: 0;
+  align-items: center;
+  display: flex;
+  flex: 0 1 125px;
+  position: relative;
+  --button-size: 32px;
+  --slider-width: 100%;
+
 }
 
 #volume-slider {
@@ -449,6 +644,7 @@ aside #player #player-author:hover {
   height: 12px;
   position: relative;
 }
+
 
 /* Helper */
 a {
@@ -474,4 +670,154 @@ a:hover {
 
 .bi-person-circle {
   font-size: large;
+}
+
+/* ARTIST PAGE */
+#hero-section {
+  height: 40vh;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+#hero-section img {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* z-index: -1; */
+}
+
+#hero-section-text {
+  z-index: 2;
+}
+
+#hero-section h1 {
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+#hero-section svg {
+  fill: #3d91f4;
+}
+
+#hero-section #verified {
+  font-size: 14px;
+}
+
+
+#popular-section {
+  width: 50%;
+}
+
+@media screen and (max-width: 1275px) {
+  #popular-section {
+      width: 100%;
+  }
+}
+
+#controls-section .play-button {
+  background-color: #1ed760;
+  padding: 0;
+  border: none;
+  height: 56px;
+  min-width: 56px;
+  width: 56px;
+  border-radius: 50%;
+  margin-right: 32px;
+}
+
+#controls-section button svg {
+  fill: #000;
+}
+
+#controls-section .follow-button {
+  background-color: transparent;
+  font-size: 14px;
+  color: #fff;
+  padding: 7px 14px;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  margin-right: 32px;
+}
+
+#controls-section .three-dots-button {
+  border: none;
+  background-color: transparent;
+}
+
+#controls-section .three-dots-button svg {
+  fill: #b3b3b3;
+}
+
+#popular-section img {
+  width: 40px;
+  height: 40px;
+}
+
+#popular-section .number,
+#popular-section .popular-song-listners,
+#popular-section .duration,
+#popular-section .see-more {
+  color: #b3b3b3;
+}
+
+#popular-section .see-more {
+  font-size: 14px;
+}
+
+#liked-songs {
+  margin-right: 200px;
+}
+
+#liked-songs .liked-songs-img-container {
+  position: relative;
+}
+
+#liked-songs .liked-songs-img-container img {
+  display: inline-block;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+}
+
+#liked-songs .liked-songs-svg-container {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #1ed760;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+#liked-songs .liked-songs-svg-container svg {
+  display: inline-block;
+  fill: #fff;
+  height: 11px;
+  width: 11px;
+}
+
+
+#liked-songs #liked-songs-artist {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+
+#discography-section a {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+#main-section {
+  margin-top: 30px;
 }
