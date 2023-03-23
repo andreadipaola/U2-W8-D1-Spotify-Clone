@@ -229,6 +229,17 @@ main header .userBtn:hover {
   opacity: 1;
 }
 
+/* .row-cols-xxl-auto > * {
+  width: calc(100% / 8);
+} */
+
+@media (min-width: 1400px) {
+  .row-cols-xxl-auto>* {
+    flex: 0 0 auto;
+    width: calc(100% / 8);
+  }  
+}
+
 .main .card {
   background-color: #181818;
   border: unset;
