@@ -1,7 +1,7 @@
 const URL =  "https://striveschool-api.herokuapp.com/api/deezer/album/";
-// const id = new URLSearchParams(window.location.search).get("id");
+const id = new URLSearchParams(window.location.search).get("id");
 // console.log(id);
-const id ="130472112";
+//const id ="130472112";
 // const id ="130472112";
 
 
@@ -25,7 +25,8 @@ const fetchAlbum = async () => {
   
       document.getElementById("album-cover").src = cover_medium;
       document.getElementById("foto-gruppo").src = artist.picture_small;
-
+      document.getElementById("link-artist").href = `./artist.html?id=${artist.id}`;
+        console.log(album);
       document.getElementById("album-title").innerText = title;
       document.getElementById("autore").innerText = artist.name;
       document.getElementById("n-brani").innerText = nb_tracks + " brani";
@@ -54,20 +55,23 @@ const fetchAlbum = async () => {
 
       const canzone = document.createElement('div');
       canzone.classList.add("mb-3");
-      canzone.innerHTML= `<div class="canzone row align-items-center flex-nowrap mx-0">
-      <div class="col-1">
-          <div class="n">${index + 1}</div>
-      </div>
-      <div class="col">
-          <div class="row flex-column">
-              <div class="col song-title text-nowrap">${trackTitle}</div>
-              <div class="col autore">${trackArtist}</div>
-          </div>
-      </div>
-      <div class="col text-end d-none d-md-block">${trackRank}</div>
-      <div class="col text-end d-md-none"><i class="bi bi-three-dots-vertical"></i></div>
-      <div class="col text-end d-none d-md-block">${finalDuration}</div>
-  </div>`
+      canzone.innerHTML= `
+      <div class="canzone d-flex align-items-center flex-nowrap mx-0">
+        <div class="px-4">
+            <div class="n">${index + 1}</div>
+        </div>
+        <div class=" text-nowrap flex-grow-1">
+            <!--<div class="row flex-column">
+                <div class="col song-title text-nowrap">${trackTitle}</div>
+                <div class="col autore">${trackArtist}</div>
+            </div>--!>
+            <p class="mb-1">${trackTitle}</p>
+            <p class="mb-0">${trackArtist}</p>
+        </div>
+        <div class=" px-4 text-end d-none d-md-block">${trackRank}</div>
+        <div class=" px-4 text-end d-md-none"><i class="bi bi-three-dots-vertical"></i></div>
+        <div class=" px-4 text-end d-none d-md-block">${finalDuration}</div>
+        </div>`
   tracksContainer.appendChild(canzone);
 });
 
