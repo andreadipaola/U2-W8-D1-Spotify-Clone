@@ -1,0 +1,276 @@
+{
+    "data": [
+        {
+            "id": 9997018,
+            "readable": true,
+            "title": "Bohemian Rhapsody (Remastered 2011)",
+            "title_short": "Bohemian Rhapsody",
+            "title_version": "(Remastered 2011)",
+            "link": "https://www.deezer.com/track/9997018",
+            "duration": 354,
+            "rank": 959624,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 0,
+            "preview": "https://cdns-preview-1.dzcdn.net/stream/c-17597947a0fdd6e8ea971f146755cd34-13.mp3",
+            "contributors": [
+                {
+                    "id": 412,
+                    "name": "Queen",
+                    "link": "https://www.deezer.com/artist/412",
+                    "share": "https://www.deezer.com/artist/412?utm_source=deezer&utm_content=artist-412&utm_term=0_1679491551&utm_medium=web",
+                    "picture": "https://api.deezer.com/artist/412/image",
+                    "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg",
+                    "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/250x250-000000-80-0-0.jpg",
+                    "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/500x500-000000-80-0-0.jpg",
+                    "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/1000x1000-000000-80-0-0.jpg",
+                    "radio": true,
+                    "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                    "type": "artist",
+                    "role": "Main"
+                }
+            ],
+            "md5_image": "6706f1154083f461a348508c28030a30",
+            "artist": {
+                "id": 412,
+                "name": "Queen",
+                "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 915785,
+                "title": "A Night At The Opera (2011 Remaster)",
+                "cover": "https://api.deezer.com/album/915785/image",
+                "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/6706f1154083f461a348508c28030a30/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/6706f1154083f461a348508c28030a30/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/6706f1154083f461a348508c28030a30/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/6706f1154083f461a348508c28030a30/1000x1000-000000-80-0-0.jpg",
+                "md5_image": "6706f1154083f461a348508c28030a30",
+                "tracklist": "https://api.deezer.com/album/915785/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 12209331,
+            "readable": true,
+            "title": "Don't Stop Me Now (Remastered 2011)",
+            "title_short": "Don't Stop Me Now",
+            "title_version": "(Remastered 2011)",
+            "link": "https://www.deezer.com/track/12209331",
+            "duration": 209,
+            "rank": 949599,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 0,
+            "preview": "https://cdns-preview-5.dzcdn.net/stream/c-5a9b2da5acb610170196eb5872c7d2ab-17.mp3",
+            "contributors": [
+                {
+                    "id": 412,
+                    "name": "Queen",
+                    "link": "https://www.deezer.com/artist/412",
+                    "share": "https://www.deezer.com/artist/412?utm_source=deezer&utm_content=artist-412&utm_term=0_1679491551&utm_medium=web",
+                    "picture": "https://api.deezer.com/artist/412/image",
+                    "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg",
+                    "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/250x250-000000-80-0-0.jpg",
+                    "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/500x500-000000-80-0-0.jpg",
+                    "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/1000x1000-000000-80-0-0.jpg",
+                    "radio": true,
+                    "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                    "type": "artist",
+                    "role": "Main"
+                }
+            ],
+            "md5_image": "fb22a75aa1aafc992230abd0bd79faef",
+            "artist": {
+                "id": 412,
+                "name": "Queen",
+                "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 1121401,
+                "title": "Jazz (2011 Remaster)",
+                "cover": "https://api.deezer.com/album/1121401/image",
+                "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/fb22a75aa1aafc992230abd0bd79faef/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/fb22a75aa1aafc992230abd0bd79faef/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/fb22a75aa1aafc992230abd0bd79faef/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/fb22a75aa1aafc992230abd0bd79faef/1000x1000-000000-80-0-0.jpg",
+                "md5_image": "fb22a75aa1aafc992230abd0bd79faef",
+                "tracklist": "https://api.deezer.com/album/1121401/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 12274786,
+            "readable": true,
+            "title": "Under Pressure (Remastered 2011)",
+            "title_short": "Under Pressure",
+            "title_version": "(Remastered 2011)",
+            "link": "https://www.deezer.com/track/12274786",
+            "duration": 248,
+            "rank": 921529,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 0,
+            "preview": "https://cdns-preview-c.dzcdn.net/stream/c-ce5840ef755795568cda3a38395dc17e-15.mp3",
+            "contributors": [
+                {
+                    "id": 412,
+                    "name": "Queen",
+                    "link": "https://www.deezer.com/artist/412",
+                    "share": "https://www.deezer.com/artist/412?utm_source=deezer&utm_content=artist-412&utm_term=0_1679491551&utm_medium=web",
+                    "picture": "https://api.deezer.com/artist/412/image",
+                    "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg",
+                    "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/250x250-000000-80-0-0.jpg",
+                    "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/500x500-000000-80-0-0.jpg",
+                    "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/1000x1000-000000-80-0-0.jpg",
+                    "radio": true,
+                    "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                    "type": "artist",
+                    "role": "Main"
+                },
+                {
+                    "id": 997,
+                    "name": "David Bowie",
+                    "link": "https://www.deezer.com/artist/997",
+                    "share": "https://www.deezer.com/artist/997?utm_source=deezer&utm_content=artist-997&utm_term=0_1679491551&utm_medium=web",
+                    "picture": "https://api.deezer.com/artist/997/image",
+                    "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/2c768882b5736fe66e925e42d88003f9/56x56-000000-80-0-0.jpg",
+                    "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/2c768882b5736fe66e925e42d88003f9/250x250-000000-80-0-0.jpg",
+                    "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/2c768882b5736fe66e925e42d88003f9/500x500-000000-80-0-0.jpg",
+                    "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/2c768882b5736fe66e925e42d88003f9/1000x1000-000000-80-0-0.jpg",
+                    "radio": true,
+                    "tracklist": "https://api.deezer.com/artist/997/top?limit=50",
+                    "type": "artist",
+                    "role": "Featured"
+                }
+            ],
+            "md5_image": "e16455433a84c7e19025403ae3eec52d",
+            "artist": {
+                "id": 412,
+                "name": "Queen",
+                "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 1127912,
+                "title": "Hot Space (Deluxe Edition 2011 Remaster)",
+                "cover": "https://api.deezer.com/album/1127912/image",
+                "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/e16455433a84c7e19025403ae3eec52d/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/e16455433a84c7e19025403ae3eec52d/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/e16455433a84c7e19025403ae3eec52d/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/e16455433a84c7e19025403ae3eec52d/1000x1000-000000-80-0-0.jpg",
+                "md5_image": "e16455433a84c7e19025403ae3eec52d",
+                "tracklist": "https://api.deezer.com/album/1127912/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 12206933,
+            "readable": true,
+            "title": "We Will Rock You (Remastered 2011)",
+            "title_short": "We Will Rock You",
+            "title_version": "(Remastered 2011)",
+            "link": "https://www.deezer.com/track/12206933",
+            "duration": 122,
+            "rank": 930401,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 0,
+            "preview": "https://cdns-preview-e.dzcdn.net/stream/c-e19a6ac869b36b45697aa109b6ef0319-17.mp3",
+            "contributors": [
+                {
+                    "id": 412,
+                    "name": "Queen",
+                    "link": "https://www.deezer.com/artist/412",
+                    "share": "https://www.deezer.com/artist/412?utm_source=deezer&utm_content=artist-412&utm_term=0_1679491551&utm_medium=web",
+                    "picture": "https://api.deezer.com/artist/412/image",
+                    "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg",
+                    "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/250x250-000000-80-0-0.jpg",
+                    "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/500x500-000000-80-0-0.jpg",
+                    "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/1000x1000-000000-80-0-0.jpg",
+                    "radio": true,
+                    "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                    "type": "artist",
+                    "role": "Main"
+                }
+            ],
+            "md5_image": "c43a1011106beda256e5371be1b00271",
+            "artist": {
+                "id": 412,
+                "name": "Queen",
+                "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 1121181,
+                "title": "News Of The World (2011 Remaster)",
+                "cover": "https://api.deezer.com/album/1121181/image",
+                "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/c43a1011106beda256e5371be1b00271/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/c43a1011106beda256e5371be1b00271/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/c43a1011106beda256e5371be1b00271/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/c43a1011106beda256e5371be1b00271/1000x1000-000000-80-0-0.jpg",
+                "md5_image": "c43a1011106beda256e5371be1b00271",
+                "tracklist": "https://api.deezer.com/album/1121181/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        },
+        {
+            "id": 568121002,
+            "readable": true,
+            "title": "Crazy Little Thing Called Love",
+            "title_short": "Crazy Little Thing Called Love",
+            "title_version": "",
+            "link": "https://www.deezer.com/track/568121002",
+            "duration": 163,
+            "rank": 739564,
+            "explicit_lyrics": false,
+            "explicit_content_lyrics": 0,
+            "explicit_content_cover": 0,
+            "preview": "https://cdns-preview-c.dzcdn.net/stream/c-ce852e942a9d52502ddc0f2922bdc97c-8.mp3",
+            "contributors": [
+                {
+                    "id": 412,
+                    "name": "Queen",
+                    "link": "https://www.deezer.com/artist/412",
+                    "share": "https://www.deezer.com/artist/412?utm_source=deezer&utm_content=artist-412&utm_term=0_1679491551&utm_medium=web",
+                    "picture": "https://api.deezer.com/artist/412/image",
+                    "picture_small": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/56x56-000000-80-0-0.jpg",
+                    "picture_medium": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/250x250-000000-80-0-0.jpg",
+                    "picture_big": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/500x500-000000-80-0-0.jpg",
+                    "picture_xl": "https://e-cdns-images.dzcdn.net/images/artist/1ab642216454f5e5e02c234f93af481c/1000x1000-000000-80-0-0.jpg",
+                    "radio": true,
+                    "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                    "type": "artist",
+                    "role": "Main"
+                }
+            ],
+            "md5_image": "8b8fc5d117f9357b79f0a0a410a170e8",
+            "artist": {
+                "id": 412,
+                "name": "Queen",
+                "tracklist": "https://api.deezer.com/artist/412/top?limit=50",
+                "type": "artist"
+            },
+            "album": {
+                "id": 75621062,
+                "title": "Bohemian Rhapsody (The Original Soundtrack)",
+                "cover": "https://api.deezer.com/album/75621062/image",
+                "cover_small": "https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/56x56-000000-80-0-0.jpg",
+                "cover_medium": "https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/250x250-000000-80-0-0.jpg",
+                "cover_big": "https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/500x500-000000-80-0-0.jpg",
+                "cover_xl": "https://e-cdns-images.dzcdn.net/images/cover/8b8fc5d117f9357b79f0a0a410a170e8/1000x1000-000000-80-0-0.jpg",
+                "md5_image": "8b8fc5d117f9357b79f0a0a410a170e8",
+                "tracklist": "https://api.deezer.com/album/75621062/tracks",
+                "type": "album"
+            },
+            "type": "track"
+        }
+    ],
+    "total": 100,
+    "next": "https://api.deezer.com/artist/412/top?index=5"
+}
