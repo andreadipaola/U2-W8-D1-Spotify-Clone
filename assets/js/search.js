@@ -145,7 +145,7 @@ const createAlbumSearch = async (elementi, singer) => {
 
     // seleziono la section con id specifico del cantante di cui andrò ad inserire gli album
     const albums = document.querySelector(`#searchResult div`);
-    // console.log(albums)
+    console.log(albums)
 
     albums.innerHTML = '';
 
@@ -161,7 +161,7 @@ const createAlbumSearch = async (elementi, singer) => {
         column.classList.add('d-none', 'd-xxl-block');
       }
 
-      column.innerHTML = (singer === 'coding-music') ? templateCodingMusic(card) : templateSinger(card);
+      column.innerHTML = templateSearchResults(card);
 
       albums.appendChild(column);
     });
