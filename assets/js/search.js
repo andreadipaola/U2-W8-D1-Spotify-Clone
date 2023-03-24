@@ -36,7 +36,7 @@ const api = 'https://striveschool-api.herokuapp.com/api/deezer/';
 const deleteAlbumReplies = (objBody) => {
 
   // dichiaro un array di oggetti già contenente un oggetto utile per il primo confronto
-  const arrObj = [{idAlbum: 0, urlAlbum: 0, titleAlbum: 0, idArtist: 0, nameArtist: 0}];
+  const arrObj = [{idAlbum: 0, urlAlbum: 0, titleAlbum: 0, idArtist: 0, nameArtist: 0, pictureArtist: 0, titleSong: 0}];
 
   for (const iterator of objBody) {
 
@@ -50,7 +50,9 @@ const deleteAlbumReplies = (objBody) => {
       artist: {
         id: idArtist,
         name: nameArtist,
-      }
+        picture_big: pictureArtist,
+      },
+      title: titleSong,
     } = iterator;
 
     let tempObj = {
@@ -58,8 +60,12 @@ const deleteAlbumReplies = (objBody) => {
       urlAlbum: urlAlbum,
       titleAlbum: titleAlbum,
       idArtist: idArtist,
-      nameArtist: nameArtist
+      nameArtist: nameArtist,
+      pictureArtist: pictureArtist,
+      titleSong: titleSong
     };
+
+    console.log(tempObj)
 
     let idCheck = false;
     
@@ -98,6 +104,28 @@ const templateSearchResults = (card) => {
 
 
 /**
+ * Fn template per popular song
+ * ----------------------------------------------------------------------------
+ */
+const templatePopularSong = (card) => {
+  let template = `
+    <a href="#">
+      <img class="img-fluid" src="${card.urlAlbum}" alt="">
+    </a>
+    <div class="flex-grow-1 ms-3">
+      <p>${card.titleSong}</p>
+      <p class="mb-0">${card.nameArtist}</p>
+    </div>
+    <div class="ms-3">
+      <p>0:00</p>
+    </div>
+  `;
+  return template;
+}
+
+
+
+/**
  * Fn che recupera ID dell'artista
  * ----------------------------------------------------------------------------
  */
@@ -118,21 +146,45 @@ const fetchDataSearch = async (name) => {
     const albumUnique = deleteAlbumReplies(objBody);
     const arrayReduce = albumUnique.slice(1, albumUnique.length);
     
-    console.log(albumUnique)
-    console.log(arrayReduce)
     createAlbumSearch(arrayReduce, name);
+
+    fetchDataTracklist(name, objBody[0].artist.tracklist);
 
   } catch (error) {
     console.log(error);
   }
 }
 
+
 /**
- * TRACKLIST:
- * le migliori 5 canzoni => fetchdata/tracklist/metodoSortSuArray/splice5
- * ---------------------------------------------------------------------------
- * 
+ * Fn che esegue fetch tracklist
+ * ----------------------------------------------------------------------------
  */
+const fetchDataTracklist = async (name, api) => {
+
+  console.log(name)
+  console.log(api)
+
+  try {        
+    const resp = await fetch(`${api}`);
+
+    // gestione degli errori
+    if (resp.status === 400) throw new Error("Errore nella richiesta (Status: 400)")
+    if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (Status: 404)")
+    if (!resp.ok) throw new Error("Errore nella fetch")
+
+    const body = await resp.json();
+    const objBody = await body.data;
+    // const albumUnique = deleteAlbumReplies(objBody);
+    // const arrayReduce = albumUnique.slice(1, albumUnique.length);
+    
+    console.log(objBody)
+    createPopularSong(objBody, name);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 
 /**
@@ -173,6 +225,48 @@ const createAlbumSearch = async (elementi, singer) => {
 
 
 /**
+ * Fn per creare le singole card conseguenti alla ricerca
+ * ----------------------------------------------------------------------------
+ */
+const createPopularSong = async (elementi, singer) => {
+
+  console.log(elementi)
+  console.log(singer)
+
+  if (elementi) {
+console.log(elementi)
+    
+    // seleziono la section con id specifico del cantante di cui andrò ad inserire gli album
+    const albumsLeft = document.querySelector(`#popularSong .col-left`);
+    const albumsRight = document.querySelector(`#popularSong .col-right`);
+
+    albumsLeft.innerHTML = `
+      <div class="card p-4">
+        <img src="${elementi[0].pictureArtist}" alt="">
+        <h3>${elementi[0].nameArtist}</h3>
+        <p>Artista</p>
+      </div>
+    `;
+
+    albumsRight.innerHTML = '';
+
+
+
+    elementi.forEach((card, index) => {
+        
+      const column = document.createElement('div');
+
+      column.classList.add('d-flex', 'align-items-start', 'mb-3');
+
+      column.innerHTML = templatePopularSong(card);
+
+      albumsRight.appendChild(column);
+    });
+  };
+}
+
+
+/**
  * Fn per eseguire la ricerca di album/cantante/playlist
  * ----------------------------------------------------------------------------
  */
@@ -198,6 +292,6 @@ formSearch.onsubmit = (event) => {
  */
 window.onload = () => {
 
-  
+
 
 }

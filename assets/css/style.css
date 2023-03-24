@@ -938,6 +938,27 @@ header .form-control:focus {
   outline: none;
   box-shadow: unset;
 }
+#popularSong .card {
+  background-color: rgb(24,24,24);
+}
+#popularSong .card:hover {
+  background-color: rgb(40,40,40);
+}
+#popularSong .card img {
+  width: 150px;
+  border-radius: 100%;
+  margin-bottom: 2rem;
+}
+#popularSong .card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+#popularSong .card p {
+  color: #fff;
+}
+#popularSong .col-5 .d-flex img {
+  width: 65px;
+}
 #searchResult h2 {
   text-transform: capitalize;
 }
