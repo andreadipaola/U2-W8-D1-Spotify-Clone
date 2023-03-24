@@ -65,8 +65,6 @@ const deleteAlbumReplies = (objBody) => {
       titleSong: titleSong
     };
 
-    console.log(tempObj)
-
     let idCheck = false;
     
     // compara gli idAlbum e se trova una corrispondenza esce dal ciclo for
@@ -121,9 +119,6 @@ const str_pad_left = (string, pad, length) => {
  */
 const fetchDataTracklist = async (name, api) => {
 
-  console.log(name)
-  console.log(api)
-
   try {        
     const resp = await fetch(`${api}`);
 
@@ -137,7 +132,6 @@ const fetchDataTracklist = async (name, api) => {
     // const albumUnique = deleteAlbumReplies(objBody);
     // const arrayReduce = albumUnique.slice(1, albumUnique.length);
     
-    console.log(objBody)
     createPopularSong(objBody, name);
 
   } catch (error) {
@@ -151,7 +145,6 @@ const fetchDataTracklist = async (name, api) => {
  * ----------------------------------------------------------------------------
  */
 const templateSearchResults = (card) => {
-  console.log(card)
   let template = `
     <div class="card p-3">
       <a href="album.html?id=${card.idAlbum}"><img src="${card.urlAlbum}" class="card-img-top img-fluid mb-3" alt=""></a>
@@ -170,7 +163,6 @@ const templateSearchResults = (card) => {
  * ----------------------------------------------------------------------------
  */
 const fetchDataSearch = async (name) => {
-
   const nameClear = name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
 
   try {        
@@ -186,11 +178,8 @@ const fetchDataSearch = async (name) => {
     const albumUnique = deleteAlbumReplies(objBody);
     // const arrayReduce = albumUnique.slice(1, albumUnique.length);
     
-    console.log(albumUnique)
     createAlbumSearch(albumUnique, name);
 
-    console.log(objBody[0].artist.tracklist)
-    // fetchDataTracklist(name, objBody[0].artist.tracklist);
     fetchDataTracklist(name, objBody[0].artist.tracklist);
 
   } catch (error) {
@@ -207,10 +196,7 @@ const fetchDataSearch = async (name) => {
  */
 const createAlbumSearch = async (elementi, singer) => {
 
-  console.log(elementi)
-  
   if (elementi) {
-    
     
     // seleziono la section con id specifico del cantante di cui andrò ad inserire gli album
     const albums = document.querySelector(`#searchResult div`);
@@ -221,8 +207,6 @@ const createAlbumSearch = async (elementi, singer) => {
     albums.innerHTML = '';
     
     elementi.forEach((card, index) => {
-      console.log(card)
-        
       const column = document.createElement('div');
 
       column.classList.add('col');
@@ -266,12 +250,7 @@ const createPopularSong = async (elementi, singer) => {
 
     albumsRight.innerHTML = '';
 
-
-
     elementi.forEach((card, index) => {
-
-      console.log(card.album.id)
-        
       const column = document.createElement('div');
 
       column.classList.add('d-flex', 'align-items-start', 'mb-3');
@@ -297,7 +276,6 @@ formSearch.onsubmit = (event) => {
   staticResults.innerHTML = '';
 
   let inputValue = formSearch.querySelector('input').value;
-  console.log(inputValue)
 
   fetchDataSearch(inputValue);
   formSearch.reset();
