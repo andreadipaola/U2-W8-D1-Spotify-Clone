@@ -184,7 +184,7 @@ const templatePopularSong = (card) => {
       <p class="mb-0">${card.artist.name}</p>
     </div>
     <div class="ms-3">
-      <p>${finalDuration}</p>
+      <p class="mb-0">${finalDuration}</p>
     </div>
   `;
   return template;
@@ -224,7 +224,7 @@ const createPopularSong = async (elementi, singer) => {
     elementi.forEach((card, index) => {
       const column = document.createElement('div');
 
-      column.classList.add('d-flex', 'align-items-start', 'mb-3');
+      column.classList.add('d-flex', 'align-items-center', 'p-2');
 
       column.innerHTML = templatePopularSong(card);
 

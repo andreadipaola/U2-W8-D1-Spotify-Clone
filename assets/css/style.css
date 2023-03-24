@@ -959,6 +959,9 @@ header .form-control:focus {
 #popularSong .col-5 .d-flex img {
   width: 65px;
 }
+#popularSong .col-right > div:hover {
+  background-color: rgba(255,255,255,0.15);
+}
 #searchResult h2 {
   text-transform: capitalize;
 }
