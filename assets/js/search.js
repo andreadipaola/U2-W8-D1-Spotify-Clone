@@ -84,63 +84,6 @@ const deleteAlbumReplies = (objBody) => {
 
 
 /**
- * Fn template per popular song
- * ----------------------------------------------------------------------------
- */
-const templatePopularSong = (card) => {
-  const min = Math.floor(card.duration / 60);
-  const sec = card.duration - min * 60;
-  const finalDuration = min + ':' + str_pad_left(sec, '0', 2);
-
-  let template = `
-    <a href="#">
-      <img class="img-fluid" src="${card.album.cover_small}" alt="">
-    </a>
-    <div class="flex-grow-1 ms-3">
-      <p>${card.title}</p>
-      <p class="mb-0">${card.artist.name}</p>
-    </div>
-    <div class="ms-3">
-      <p>${finalDuration}</p>
-    </div>
-  `;
-  return template;
-}
-
-// Fn 
-const str_pad_left = (string, pad, length) => {
-  return (new Array(length + 1).join(pad) + string).slice(-length);
-}
-
-
-/**
- * Fn che esegue fetch tracklist
- * ----------------------------------------------------------------------------
- */
-const fetchDataTracklist = async (name, api) => {
-
-  try {        
-    const resp = await fetch(`${api}`);
-
-    // gestione degli errori
-    if (resp.status === 400) throw new Error("Errore nella richiesta (Status: 400)")
-    if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (Status: 404)")
-    if (!resp.ok) throw new Error("Errore nella fetch")
-
-    const body = await resp.json();
-    const objBody = await body.data;
-    // const albumUnique = deleteAlbumReplies(objBody);
-    // const arrayReduce = albumUnique.slice(1, albumUnique.length);
-    
-    createPopularSong(objBody, name);
-
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-
-/**
  * Fn template per search section
  * ----------------------------------------------------------------------------
  */
@@ -156,38 +99,6 @@ const templateSearchResults = (card) => {
   `;
   return template;
 }
-
-
-/**
- * Fn che recupera ID dell'artista
- * ----------------------------------------------------------------------------
- */
-const fetchDataSearch = async (name) => {
-  const nameClear = name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
-
-  try {        
-    const resp = await fetch(`${api}search?q=${nameClear}`);
-
-    // gestione degli errori
-    if (resp.status === 400) throw new Error("Errore nella richiesta (Status: 400)")
-    if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (Status: 404)")
-    if (!resp.ok) throw new Error("Errore nella fetch")
-
-    const body = await resp.json();
-    const objBody = await body.data;
-    const albumUnique = deleteAlbumReplies(objBody);
-    // const arrayReduce = albumUnique.slice(1, albumUnique.length);
-    
-    createAlbumSearch(albumUnique, name);
-
-    fetchDataTracklist(name, objBody[0].artist.tracklist);
-
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-
 
 
 /**
@@ -226,6 +137,66 @@ const createAlbumSearch = async (elementi, singer) => {
 
 
 /**
+ * Fn che recupera ID dell'artista
+ * ----------------------------------------------------------------------------
+ */
+const fetchDataSearch = async (name) => {
+  const nameClear = name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+
+  try {        
+    const resp = await fetch(`${api}search?q=${nameClear}`);
+
+    // gestione degli errori
+    if (resp.status === 400) throw new Error("Errore nella richiesta (Status: 400)")
+    if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (Status: 404)")
+    if (!resp.ok) throw new Error("Errore nella fetch")
+
+    const body = await resp.json();
+    const objBody = await body.data;
+    const albumUnique = deleteAlbumReplies(objBody);
+    // const arrayReduce = albumUnique.slice(1, albumUnique.length);
+    
+    createAlbumSearch(albumUnique, name);
+
+    fetchDataTracklist(name, objBody[0].artist.tracklist);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+/**
+ * Fn template per popular song
+ * ----------------------------------------------------------------------------
+ */
+const templatePopularSong = (card) => {
+  const min = Math.floor(card.duration / 60);
+  const sec = card.duration - min * 60;
+  const finalDuration = min + ':' + str_pad_left(sec, '0', 2);
+
+  let template = `
+    <a href="#">
+      <img class="img-fluid" src="${card.album.cover_small}" alt="">
+    </a>
+    <div class="flex-grow-1 ms-3">
+      <p>${card.title}</p>
+      <p class="mb-0">${card.artist.name}</p>
+    </div>
+    <div class="ms-3">
+      <p>${finalDuration}</p>
+    </div>
+  `;
+  return template;
+}
+
+// Fn 
+const str_pad_left = (string, pad, length) => {
+  return (new Array(length + 1).join(pad) + string).slice(-length);
+}
+
+
+/**
  * Fn per creare le singole card conseguenti alla ricerca
  * ----------------------------------------------------------------------------
  */
@@ -260,6 +231,31 @@ const createPopularSong = async (elementi, singer) => {
       albumsRight.appendChild(column);
     });
   };
+}
+
+
+/**
+ * Fn che esegue fetch tracklist
+ * ----------------------------------------------------------------------------
+ */
+const fetchDataTracklist = async (name, api) => {
+
+  try {        
+    const resp = await fetch(`${api}`);
+
+    // gestione degli errori
+    if (resp.status === 400) throw new Error("Errore nella richiesta (Status: 400)")
+    if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (Status: 404)")
+    if (!resp.ok) throw new Error("Errore nella fetch")
+
+    const body = await resp.json();
+    const objBody = await body.data;
+    
+    createPopularSong(objBody, name);
+
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 
