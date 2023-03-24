@@ -225,8 +225,17 @@ main header .userBtn:hover {
   display: block;
 }
 
-.main .goodCard:hover .goodCard-play {
+.main .goodCard:hover .goodCard-play,
+.main .card:hover .goodCard-play {
   opacity: 1;
+}
+
+.opacityOn {
+  opacity: 1;
+}
+
+.opacityOf {
+  opacity: 0;
 }
 
 /* .row-cols-xxl-auto > * {
@@ -238,6 +247,7 @@ main header .userBtn:hover {
     flex: 0 0 auto;
     width: calc(100% / 8);
   }
+  }
 }
 
 .main .card {
@@ -247,15 +257,18 @@ main header .userBtn:hover {
   height: 100%;
 }
 
+
 .main .card-body {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
+
 .main .card:hover {
   background-color: #282828;
 }
+
 
 .main h3 {
   font-size: 1rem;
@@ -366,8 +379,6 @@ footer #copyright {
   height: 32px;
   min-width: 32px;
   width: 32px;
-
-
   align-items: center;
   display: flex;
   justify-content: center;
@@ -404,20 +415,6 @@ footer #copyright {
   color: #fff;
 }
 
-/* CENTRAL PLAYER STYLES */
-#player button {
-  background-color: transparent;
-  padding: 0;
-  border: none;
-  color: rgba(255, 255, 255, 0.7);
-  height: 32px;
-  min-width: 32px;
-  width: 32px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
 #central-player {
   max-width: 722px;
   width: 40%;
@@ -432,15 +429,8 @@ footer #copyright {
 }
 
 #central-player #play-btn {
-  align-items: center;
   background-color: #fff;
-  border: none;
   border-radius: 32px;
-  display: flex;
-  height: 32px;
-  justify-content: center;
-  min-width: 32px;
-  width: 32px;
   margin-inline: 16px;
 }
 
@@ -450,163 +440,59 @@ footer #copyright {
 
 /* PLAYBACK BAR STYLES */
 #central-player #playback-bar {
-  /* user-select: none; */
-  border: 0;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  gap: 8px;
+  /* flex-direction: row; */
   justify-content: space-between;
+  align-items: center;
+  /* user-select: none; */
+  /* vertical-align: baseline; */
+  gap: 8px;
   width: 100%;
 }
 
-#central-player #playback-bar:focus {
-  outline: none;
-}
-
-#central-player #starting-time {
+#central-player #startingTime {
   min-width: 40px;
   text-align: right;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  margin-block: 0px;
   font-size: 0.6875rem;
   font-weight: 400;
-  font-family: "Circular";
   color: #a7a7a7;
-}
-
-#central-player #starting-time:focus {
-  outline: none;
 }
 
 #progress-bar,
 #volume-slider {
-  height: 12px;
-  position: relative;
   width: 100%;
 }
 
-#progress-bar:focus,
-#volume-slider:focus {
-  outline: none;
-}
-
-#progress-bar:focus-within,
-#volume-slider:focus-within {
-  outline: 5px auto #3673d4;
-}
-
-#progress-bar:focus-visible,
-#volume-slider:focus-visible {
-  outline: -webkit-focus-ring-color auto 1px;
-}
-
-#progress-bar label,
-#volume-slider label {
-  clip: rect(0 0 0 0);
-  border: 0;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#progress-bar label:focus,
-#volume-slider label:focus {
-  outline: none;
-}
-
-#progress-bar label:focus-visible,
-#volume-slider label:focus-visible {
-  outline: -webkit-focus-ring-color auto 1px;
-}
-
-#progress-bar input,
-#volume-slider input {
-  writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: normal;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-  -webkit-rtl-ordering: logical;
-  background-color: field;
-  appearance: auto;
-  cursor: default;
-  padding: initial;
-  border: initial;
-  margin: 2px;
-  color: #b3b3b3;
-  text-transform: none;
-  font-family: "Circular";
-}
-
-#progress-time {
-  /* Questo valore dovrà essere dinamico */
-  --progress-bar-transform: 42.3077%;
-  --bg-color: hsla(0, 0%, 100%, .3);
-  --fg-color: #fff;
-  --is-active-fg-color: #1db954;
-  --progress-bar-transform: 0%;
-  --progress-bar-height: 4px;
-  /* Qui ho sostituito una variabile col primo termine di calc */
-  --progress-bar-radius: calc(4px/2);
-  height: 100%;
-  overflow: hidden;
-  touch-action: none;
-  width: 100%;
-}
-
-#progress-time div {
-  background-color: var(--bg-color);
-  display: flex;
-  position: absolute;
-  top: 50%;
+input[type="range"] {
+  -webkit-appearance: none;
   transform: translateY(-50%);
-  border-radius: var(--progress-bar-radius);
-  height: var(--progress-bar-height);
   width: 100%;
+  height: 4px;
+  background: #ffffff4d;
+  border-radius: 2px;
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
 }
 
-#progress-time div div {
-  border-radius: var(--progress-bar-radius);
-  height: var(--progress-bar-height);
-  width: 100%;
-  overflow: hidden;
+/* Input Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: trasparent;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .1s ease-in-out;
 }
 
-#progress-time div div div {
-  background-color: var(--fg-color);
-  border-radius: var(--progress-bar-radius);
-  height: var(--progress-bar-height);
-  transform: translateX(calc(-100% + var(--progress-bar-transform)));
-  width: 100%;
+
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #fff;
 }
 
-#progress-time div div div:focus {
-  background-color: var(--is-active-fg-color);
-  outline: none;
-}
-
-#ending-time {
+#endingTime {
   min-width: 40px;
   text-align: left;
   box-sizing: border-box;
@@ -718,6 +604,7 @@ a:hover {
 
 @media screen and (max-width: 1275px) {
   #popular-section {
+    width: 100%;
     width: 100%;
   }
 }
@@ -833,6 +720,9 @@ a:hover {
 }
 
 .album-cover {
+  box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
+  height: 192px;
+  width: 192px;
   box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
   height: 192px;
   width: 192px;
