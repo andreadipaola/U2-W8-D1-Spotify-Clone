@@ -193,9 +193,7 @@ const templateCodingMusicAlt = (card) => {
     if(goodCardAudio.paused) {
       goodCardAudio.play(); 
       goodCardPlay.innerHTML = pauseSvg;
-      // goodCardPlay.classList.add("opacityOn");
-
-
+      // goodCardPlay.classList.add("opacityOn")
     } else {
       goodCardAudio.pause();
       goodCardPlay.innerHTML = playSvg;

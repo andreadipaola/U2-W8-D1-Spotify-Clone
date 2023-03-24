@@ -21,3 +21,7 @@ rangeInputs.forEach(input => {
 numberInput.addEventListener('input', handleInputChange)
 
 
+// FUNZIONE PLAY/PAUSA
+function togglePlay() {
+    return this.paused ? this.play() : this.pause();
+};
