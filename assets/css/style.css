@@ -918,3 +918,23 @@ button svg {
     }
 }
 
+/* SEARCH */
+header form {
+  background-color: #fff;
+  color: #fff;
+  border-radius: 100px;
+  padding: 0 1rem;
+  margin-inline: 1rem;
+}
+header .form-control {
+  background-color: transparent;
+  border: unset;
+}
+header .form-control::placeholder {
+  font-size: 0.8rem;
+}
+header .form-control:focus {
+  border-color: unset;
+  outline: none;
+  box-shadow: unset;
+}
