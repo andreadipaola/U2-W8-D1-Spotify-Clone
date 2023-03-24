@@ -938,3 +938,26 @@ header .form-control:focus {
   outline: none;
   box-shadow: unset;
 }
+#searchResult h2 {
+  text-transform: capitalize;
+}
+#staticResults .card {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8px;
+}
+#staticResults .card h3 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+}
+#staticResults .card img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  height: 100px;
+  width: 100px;
+  transform: rotate(25deg) translate(18%,-2%);
+}

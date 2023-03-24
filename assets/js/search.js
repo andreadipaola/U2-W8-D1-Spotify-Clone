@@ -143,9 +143,12 @@ const createAlbumSearch = async (elementi, singer) => {
 
   if (elementi) {
 
+    
     // seleziono la section con id specifico del cantante di cui andrò ad inserire gli album
     const albums = document.querySelector(`#searchResult div`);
-    console.log(albums)
+    const sectionTitle = document.querySelector(`#searchResult h2`);
+
+    sectionTitle.textContent = singer.toLowerCase();
 
     albums.innerHTML = '';
 
@@ -178,6 +181,9 @@ const formSearch = document.querySelector('#formSearch');
 formSearch.onsubmit = (event) => {
   event.preventDefault();
 
+  let staticResults = document.querySelector('#staticResults');
+  staticResults.innerHTML = '';
+
   let inputValue = formSearch.querySelector('input').value;
   console.log(inputValue)
 
@@ -192,13 +198,6 @@ formSearch.onsubmit = (event) => {
  */
 window.onload = () => {
 
-  // sayHello();
-
-  // fetchData('coding-music');
-
-  // for (const singer of nameSingers) {
-  //   fetchData(singer);
-  // }
-
+  
 
 }
