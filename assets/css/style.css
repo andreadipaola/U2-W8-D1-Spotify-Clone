@@ -247,7 +247,6 @@ main header .userBtn:hover {
     flex: 0 0 auto;
     width: calc(100% / 8);
   }
-  }
 }
 
 .main .card {
