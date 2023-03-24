@@ -81,25 +81,7 @@ const deleteAlbumReplies = (objBody) => {
     if(!idCheck) {arrObj.push(tempObj)};
   }
 
-  return arrObj;
-}
-
-
-/**
- * Fn template per search section
- * ----------------------------------------------------------------------------
- */
-const templateSearchResults = (card) => {
-  let template = `
-    <div class="card p-3">
-      <a href="album.html?id=${card.idAlbum}"><img src="${card.urlAlbum}" class="card-img-top img-fluid mb-3" alt=""></a>
-      <div class="card-body p-0">
-        <a href="album.html?id=${card.idAlbum}"><h3 class="card-title">${card.titleAlbum}</h3></a>
-        <a href="artist.html?id=${card.idArtist}"><p class="card-text m-0">${card.nameArtist}</p></a>
-      </div>
-    </div>
-  `;
-  return template;
+  return arrObj.slice(1, arrObj.length);;
 }
 
 
@@ -108,51 +90,28 @@ const templateSearchResults = (card) => {
  * ----------------------------------------------------------------------------
  */
 const templatePopularSong = (card) => {
+  const min = Math.floor(card.duration / 60);
+  const sec = card.duration - min * 60;
+  const finalDuration = min + ':' + str_pad_left(sec, '0', 2);
+
   let template = `
     <a href="#">
-      <img class="img-fluid" src="${card.urlAlbum}" alt="">
+      <img class="img-fluid" src="${card.album.cover_small}" alt="">
     </a>
     <div class="flex-grow-1 ms-3">
-      <p>${card.titleSong}</p>
-      <p class="mb-0">${card.nameArtist}</p>
+      <p>${card.title}</p>
+      <p class="mb-0">${card.artist.name}</p>
     </div>
     <div class="ms-3">
-      <p>0:00</p>
+      <p>${finalDuration}</p>
     </div>
   `;
   return template;
 }
 
-
-
-/**
- * Fn che recupera ID dell'artista
- * ----------------------------------------------------------------------------
- */
-const fetchDataSearch = async (name) => {
-
-  const nameClear = name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
-
-  try {        
-    const resp = await fetch(`${api}search?q=${nameClear}`);
-
-    // gestione degli errori
-    if (resp.status === 400) throw new Error("Errore nella richiesta (Status: 400)")
-    if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (Status: 404)")
-    if (!resp.ok) throw new Error("Errore nella fetch")
-
-    const body = await resp.json();
-    const objBody = await body.data;
-    const albumUnique = deleteAlbumReplies(objBody);
-    const arrayReduce = albumUnique.slice(1, albumUnique.length);
-    
-    createAlbumSearch(arrayReduce, name);
-
-    fetchDataTracklist(name, objBody[0].artist.tracklist);
-
-  } catch (error) {
-    console.log(error);
-  }
+// Fn 
+const str_pad_left = (string, pad, length) => {
+  return (new Array(length + 1).join(pad) + string).slice(-length);
 }
 
 
@@ -188,23 +147,81 @@ const fetchDataTracklist = async (name, api) => {
 
 
 /**
+ * Fn template per search section
+ * ----------------------------------------------------------------------------
+ */
+const templateSearchResults = (card) => {
+  console.log(card)
+  let template = `
+    <div class="card p-3">
+      <a href="album.html?id=${card.idAlbum}"><img src="${card.urlAlbum}" class="card-img-top img-fluid mb-3" alt=""></a>
+      <div class="card-body p-0">
+        <a href="album.html?id=${card.idAlbum}"><h3 class="card-title">${card.titleAlbum}</h3></a>
+        <a href="artist.html?id=${card.idArtist}"><p class="card-text m-0">${card.nameArtist}</p></a>
+      </div>
+    </div>
+  `;
+  return template;
+}
+
+
+/**
+ * Fn che recupera ID dell'artista
+ * ----------------------------------------------------------------------------
+ */
+const fetchDataSearch = async (name) => {
+
+  const nameClear = name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+
+  try {        
+    const resp = await fetch(`${api}search?q=${nameClear}`);
+
+    // gestione degli errori
+    if (resp.status === 400) throw new Error("Errore nella richiesta (Status: 400)")
+    if (resp.status === 404) throw new Error("Non abbiamo trovato la risorsa (Status: 404)")
+    if (!resp.ok) throw new Error("Errore nella fetch")
+
+    const body = await resp.json();
+    const objBody = await body.data;
+    const albumUnique = deleteAlbumReplies(objBody);
+    // const arrayReduce = albumUnique.slice(1, albumUnique.length);
+    
+    console.log(albumUnique)
+    createAlbumSearch(albumUnique, name);
+
+    console.log(objBody[0].artist.tracklist)
+    // fetchDataTracklist(name, objBody[0].artist.tracklist);
+    fetchDataTracklist(name, objBody[0].artist.tracklist);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
+
+/**
  * Fn per creare le singole card conseguenti alla ricerca
  * ----------------------------------------------------------------------------
  */
 const createAlbumSearch = async (elementi, singer) => {
 
+  console.log(elementi)
+  
   if (elementi) {
-
+    
     
     // seleziono la section con id specifico del cantante di cui andrò ad inserire gli album
     const albums = document.querySelector(`#searchResult div`);
     const sectionTitle = document.querySelector(`#searchResult h2`);
-
+    
     sectionTitle.textContent = singer.toLowerCase();
-
+    
     albums.innerHTML = '';
-
+    
     elementi.forEach((card, index) => {
+      console.log(card)
         
       const column = document.createElement('div');
 
@@ -230,20 +247,19 @@ const createAlbumSearch = async (elementi, singer) => {
  */
 const createPopularSong = async (elementi, singer) => {
 
-  console.log(elementi)
-  console.log(singer)
-
   if (elementi) {
-console.log(elementi)
     
     // seleziono la section con id specifico del cantante di cui andrò ad inserire gli album
     const albumsLeft = document.querySelector(`#popularSong .col-left`);
     const albumsRight = document.querySelector(`#popularSong .col-right`);
+    const albumsTitle = document.querySelector(`#popularSong > h2`);
+
+    albumsTitle.textContent = 'Brani Popolari';
 
     albumsLeft.innerHTML = `
       <div class="card p-4">
-        <img src="${elementi[0].pictureArtist}" alt="">
-        <h3>${elementi[0].nameArtist}</h3>
+        <img src="${elementi[0].contributors[0].picture_big}" alt="">
+        <h3>${elementi[0].artist.name}</h3>
         <p>Artista</p>
       </div>
     `;
@@ -253,6 +269,8 @@ console.log(elementi)
 
 
     elementi.forEach((card, index) => {
+
+      console.log(card.album.id)
         
       const column = document.createElement('div');
 
