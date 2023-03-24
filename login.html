@@ -127,10 +127,15 @@
             const pwd = document.getElementById("password-login").value;
 
             if (user === USER && pwd === PWD) {
+
+                localStorage.setItem("logged", "Admin");
+
                 window.location.assign("index.html");
 
                 console.log("accesso effettuato");
             } else {
+                localStorage.setItem("logged", "");
+
                 console.log("username o passord errati");
                 return;
             }

@@ -13,6 +13,13 @@ window.addEventListener('scroll', function (e) {
   }
 });
 
+function login() {
+  window.location.assign("login.html");
+  let button = document.querySelector('header .userBtn span');
+  console.log(button)
+}
+
+
 
 /**
  * API
