@@ -237,7 +237,7 @@ main header .userBtn:hover {
   .row-cols-xxl-auto>* {
     flex: 0 0 auto;
     width: calc(100% / 8);
-  }  
+  }
 }
 
 .main .card {
@@ -246,14 +246,17 @@ main header .userBtn:hover {
   transition: all 0.5s ease-in-out;
   height: 100%;
 }
+
 .main .card-body {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
+
 .main .card:hover {
   background-color: #282828;
 }
+
 .main h3 {
   font-size: 1rem;
 }
@@ -715,7 +718,7 @@ a:hover {
 
 @media screen and (max-width: 1275px) {
   #popular-section {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -830,48 +833,49 @@ a:hover {
 }
 
 .album-cover {
-    box-shadow: 0 4px 60px rgba(0,0,0,.5);
-    height: 192px;
-    width: 192px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
+  height: 192px;
+  width: 192px;
 }
 
 .album-title {
-    font-size: 3rem;
-    font-weight: bold;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .category {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .play-button {
-    background-color: #1ed760;
-    border: none;
-    height: 56px;
-    width: 56px;
-    border-radius: 50%;
+  background-color: #1ed760;
+  border: none;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
 }
 
 .heart .bi,
 .download .bi,
 .optional .bi,
 .t-r-i .bi {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .t-r-i,
 .a-c-d,
-.b-p-d{
-    font-size: 0.875rem;
+.b-p-d {
+  font-size: 0.875rem;
 }
+
 button svg {
-    fill: #000;
+  fill: #000;
 }
 
 .n-brani,
 .durata {
-    color: hsla(0,0%,100%,.7);
-    font-weight: lighter;
+  color: hsla(0, 0%, 100%, .7);
+  font-weight: lighter;
 }
 
 #foto-gruppo {
@@ -882,39 +886,149 @@ button svg {
 }
 
 @media screen and (max-width: 767px) {
-    .album-cover {
-        box-shadow: 0 4px 60px rgba(0,0,0,.5);
-        height: 144px;
-        width: 144px;
-    }
+  .album-cover {
+    box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
+    height: 144px;
+    width: 144px;
+  }
 
-    .album-img {
-        text-align: center;
-    }
-    main {
-        background: rgb(18, 49, 62);
-        background: linear-gradient(180deg, rgba(18, 49, 62, 1) 0%, rgba(18, 18, 18, 1) 10%);
-        margin-left: auto;
-        width: 100%;
-      }
-      .album-title {
-        font-size: 2rem;
-        font-weight: bold;
-        line-height: 30px;
-        margin-block: 1rem
-    }
+  .album-img {
+    text-align: center;
+  }
 
-    .album-name {
-        margin-top: -2rem
-    }
+  main {
+    background: rgb(18, 49, 62);
+    background: linear-gradient(180deg, rgba(18, 49, 62, 1) 0%, rgba(18, 18, 18, 1) 10%);
+    margin-left: auto;
+    width: 100%;
+  }
 
-    .play-button {
-        height: 40px;
-        width: 40px;
-    }
+  .album-title {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 30px;
+    margin-block: 1rem
+  }
 
-    .canzone {
-        font-size: 1rem;
-    }
+  .album-name {
+    margin-top: -2rem
+  }
+
+  .play-button {
+    height: 40px;
+    width: 40px;
+  }
+
+  .canzone {
+    font-size: 1rem;
+  }
 }
 
+
+/* LOGIN PAGE STYLES */
+.spotify-logo--text {
+  width: 134px;
+  padding: 0px 0px 12px;
+}
+
+.logo {
+  padding: 25px 0px 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgb(217, 218, 220);
+  text-align: center;
+  width: 100%;
+}
+
+.formContainer {
+  flex: 3 1 0%;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.formBody {
+  max-width: 450px;
+  width: 100%;
+}
+
+.formSocial {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  text-indent: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.formFacebook {
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 500px;
+  padding-block: 7px;
+  padding-inline: 31px;
+  display: flex;
+  justify-content: center;
+  inline-size: 100%;
+  color: rgb(248, 248, 248);
+  background-color: rgb(24, 119, 242);
+  border-color: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  padding: 12px;
+}
+
+.formApple {
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 500px;
+  padding-block: 7px;
+  padding-inline: 31px;
+  display: flex;
+  justify-content: center;
+  inline-size: 100%;
+  color: rgb(248, 248, 248);
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  padding: 12px
+}
+
+.formGoogle {
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 500px;
+  padding-block: 7px;
+  padding-inline: 31px;
+  display: flex;
+  justify-content: center;
+  inline-size: 100%;
+  color: gray;
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+.btnIscriviti {
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 500px;
+  padding-block: 7px;
+  padding-inline: 31px;
+  display: flex;
+  justify-content: center;
+  inline-size: 100%;
+  color: black;
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+.btnAccedi {
+  border: 0;
+  background-color: #1ed760;
+  border-radius: 500px;
+  min-block-size: 48px;
+  padding-block: 8px;
+  padding-inline: 32px;
+}
