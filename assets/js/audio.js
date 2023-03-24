@@ -1,38 +1,4 @@
-
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-// const id = new URLSearchParams(window.location.search).get("id");
-const param = "eminem";
-
-const fetchAlbum = async () => {
-    try {
-        const res = await fetch(URL + param);
-        const album = await res.json();
-
-        const { title, cover_medium, nb_tracks, duration, artist, tracks } = album;
-
-
-
-
-    }
-    catch (err) {
-        console.log(err);
-    }
-};
-
-
-const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
-
-
-
-const playButtons = document.querySelectorAll(".play-btn");
-
-playButtons.forEach(playBtn => {
-    playBtn.addEventListener("click", () => {
-        audio.play();
-    });
-});
-
-
+// FUNZIONE PER LA GESTIONE CUSTOM DEGLI SLIDER (PROGRESS BAR E VOLUME)
 const rangeInputs = document.querySelectorAll('input[type="range"]')
 const numberInput = document.querySelector('input[type="number"]')
 
@@ -53,3 +19,5 @@ rangeInputs.forEach(input => {
 })
 
 numberInput.addEventListener('input', handleInputChange)
+
+

@@ -225,8 +225,17 @@ main header .userBtn:hover {
   display: block;
 }
 
-.main .goodCard:hover .goodCard-play {
+.main .goodCard:hover .goodCard-play,
+.main .card:hover .goodCard-play {
   opacity: 1;
+}
+
+.opacityOn {
+  opacity: 1;
+}
+
+.opacityOf {
+  opacity: 0;
 }
 
 /* .row-cols-xxl-auto > * {
